@@ -1,0 +1,10 @@
+<header class="header">
+  <h1>Fondos BTG</h1>
+  <nav>
+    <a routerLink="/fondos" routerLinkActive="active">Fondos</a>
+    <a routerLink="/historial" routerLinkActive="active">Historial</a>
+  </nav>
+  <div class="saldo">
+    Saldo actual: {{ saldoSignal() | currency : "COP" : "symbol" }}
+  </div>
+</header>

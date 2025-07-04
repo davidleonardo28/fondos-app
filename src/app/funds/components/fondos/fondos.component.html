@@ -1,0 +1,43 @@
+<div>
+  <div *ngIf="listaFondos.length > 0; else loading" class="fondos-container">
+    <h2>Fondos Disponibles</h2>
+    <div class="fondos-list">
+      <mat-card *ngFor="let fondo of listaFondos" class="fondo-card">
+        <mat-card-header>
+          <mat-card-title>{{ fondo.nombre }}</mat-card-title>
+          <mat-card-subtitle
+            >Categoría: {{ fondo.categoria }}</mat-card-subtitle
+          >
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            Monto mínimo:
+            <strong>{{ fondo.montoMinimo | currency : "COP" }}</strong>
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="suscribirse(fondo)"
+          >
+            Suscribirse
+          </button>
+          <button mat-stroked-button color="accent" (click)="cancelar(fondo)">
+            Cancelar
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+
+  <ng-template #loading>
+    <div class="loading-container">
+      <mat-spinner diameter="50"></mat-spinner>
+      <p>Cargando fondos...</p>
+    </div>
+  </ng-template>
+
+  <!-- Llamado al componente historial -->
+  <historial />
+</div>

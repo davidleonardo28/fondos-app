@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+custom-snackbar-overlay .mat-mdc-snack-bar-container {
+  font-size: 177.4rem;
+  /* 👈 texto un poco más grande */
+  padding: 1.2rem 2rem;
+  /* 👈 aumenta ligeramente el padding */
+  border-radius: 10px;
+  /* 👈 esquinas suavizadas */
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
+
+  max-width: 90%;
+  width: fit-content;
+}
+
+.custom-snackbar-overlay .mat-mdc-button {
+  font-size: 1.2rem;
+  /* 👈 tamaño del botón “Cerrar” */
+}
+
+
+/* Aplica solo a este dialog */
+.custom-dialog-panel .mat-mdc-dialog-container {
+  overflow: visible !important;
+  /* 👈 quita scroll */
+}
+
+.custom-dialog-panel .mat-mdc-dialog-surface {
+  max-height: unset !important;
+  /* 👈 evita límite de altura */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+}

@@ -1,0 +1,81 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0b132b;
+  /* fondo oscuro */
+  color: #f5f5f5;
+  /* texto claro */
+  padding: 1.5rem 3rem;
+  /* 👈 más alto y espacioso */
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  /* 👈 más grande */
+  font-weight: 700;
+  color: #00bcd4;
+  /* cyan primario */
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+  /* 👈 más separación entre links */
+}
+
+nav a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 1.1rem;
+  /* 👈 texto más grande */
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ff9800;
+  /* orange acento en hover */
+}
+
+nav a.active {
+  font-weight: bold;
+  border-bottom: 3px solid #00bcd4;
+  /* línea cyan más gruesa */
+}
+
+.saldo {
+  font-weight: 600;
+  font-size: 1.2rem;
+  /* 👈 saldo más grande */
+  color: #ff9800;
+  /* orange */
+}
+
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.5rem;
+    /* 👈 ajusta padding en móviles */
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+    /* 👈 más grande pero no exagerado en mobile */
+  }
+
+  nav {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+
+  .saldo {
+    margin-top: 0.8rem;
+    font-size: 1.1rem;
+  }
+}

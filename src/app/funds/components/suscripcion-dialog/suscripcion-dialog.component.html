@@ -1,0 +1,67 @@
+<h2>📨 Suscripción al Fondo</h2>
+
+<form [formGroup]="form" (ngSubmit)="confirmar()" class="form-dialog">
+  <!-- Método -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Método de notificación*</mat-label>
+    <mat-select formControlName="metodo">
+      <mat-option value="email">Email</mat-option>
+      <mat-option value="sms">SMS</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Correo electrónico -->
+  <div *ngIf="form.value.metodo === 'email'">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Correo electrónico*</mat-label>
+      <input
+        matInput
+        formControlName="contacto"
+        type="email"
+        placeholder="usuario@correo.com"
+      />
+      <mat-error *ngIf="form.get('contacto')?.hasError('required')">
+        📧 El correo es obligatorio
+      </mat-error>
+      <mat-error *ngIf="form.get('contacto')?.hasError('email')">
+        📧 Ingrese un correo válido
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Número de celular -->
+  <div *ngIf="form.value.metodo === 'sms'">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Número de celular*</mat-label>
+      <input
+        matInput
+        formControlName="contacto"
+        type="tel"
+        placeholder="+57 3001234567"
+        maxlength="10"
+        pattern="[0-9]*"
+      />
+      <mat-error *ngIf="form.get('contacto')?.hasError('required')">
+        📱 El número es obligatorio
+      </mat-error>
+      <mat-error *ngIf="form.get('contacto')?.hasError('pattern')">
+        📱 Solo números (10 dígitos)
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Botones -->
+  <div class="dialog-actions">
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="form.invalid"
+    >
+      Confirmar
+    </button>
+    <button mat-stroked-button color="warn" (click)="cancelar()" type="button">
+      Cancelar
+    </button>
+  </div>
+</form>

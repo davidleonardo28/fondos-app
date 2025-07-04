@@ -1,0 +1,138 @@
+/* .fondos-container {
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+} */
+
+.fondos-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 0.5rem;
+}
+
+.fondo-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  max-height: 230px;
+  background-color: #f5f7fa;
+  border-radius: 12px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+h2 {
+  text-align: center;
+  margin: 1rem 0 1.5rem;
+  color: #3f51b5;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.fondo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+mat-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0b132b;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+mat-card-subtitle {
+  font-size: 0.95rem;
+  color: #6c757d;
+  text-align: center;
+}
+
+mat-card-content p {
+  margin: 0.8rem 0;
+  font-size: 1rem;
+  color: #212529;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+button[mat-raised-button] {
+  border-radius: 24px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 500;
+}
+
+button[color="primary"] {
+  background-color: #00bcd4;
+  /* Cyan */
+  color: #fff;
+}
+
+button[color="accent"] {
+  border: 1px solid #ff9800;
+  /* Orange */
+  color: #ff9800;
+}
+
+.custom-snackbar {
+  background-color: #0b132b;
+  color: #f5f5f5;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  color: #00bcd4;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+    /* pequeño deslizamiento hacia arriba */
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  color: #00bcd4;
+}
+
+.loading-container p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+historial {
+  display: block;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
